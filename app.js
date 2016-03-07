@@ -8,6 +8,21 @@ $(function(){
   var query = getQueryParams(document.location.search);
   var token = query.token?query.token:'';
   $('#token').html(token);
+  localStorage.setItem('token', token);
+
+  $('.testers #test').on('click', function() {
+     $.ajax({
+       method: 'GET',
+       url: 'https://i3tswjv8ak.execute-api.eu-west-1.amazonaws.com/dev/test-token/?ts='+ (new Date()).getTime(),
+       headers: { Authorization: localStorage.getItem('token') }
+     })
+      .done(function(data) {
+        $('#test-result').html(JSON.stringify(data));
+      })
+      .fail(function(error) {
+        $('#test-result').html(JSON.stringify(error));
+      });
+  });
 });
 
 function getQueryParams(qs) {
