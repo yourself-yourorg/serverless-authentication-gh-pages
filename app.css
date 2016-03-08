@@ -1,7 +1,12 @@
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 16px;
-  padding: 30px;
+}
+
+.main {
+  padding: 20px;
+  margin: auto;
+  max-width: 800px;
 }
 
 h1 {
@@ -17,11 +22,12 @@ h1 {
 
 button {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  padding: 10px;
-  font-size: 13px;
+  padding: 5px;
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 5px;
   border: 1px solid #a9a9a9;
   background-color: #cacaca;
+  margin: 2px;
 }
