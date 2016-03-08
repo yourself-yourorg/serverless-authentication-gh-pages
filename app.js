@@ -2,21 +2,6 @@
 
 var endpoint = 'https://i3tswjv8ak.execute-api.eu-west-1.amazonaws.com/dev';
 
-$(function () {
-  $('.providers button').on('click', function (event) {
-    var provider = $(event.target).attr('id');
-    window.location.href = endpoint + '/signin/' + provider;
-  });
-  var query = getQueryParams(document.location.search);
-  var token = query.token ? query.token : '';
-  $('#token').html(token);
-  localStorage.setItem('token', token);
-
-  testToken();
-
-  $('.testers #test').on('click', testToken);
-});
-
 function testToken() {
   $.ajax({
       method: 'GET',
@@ -42,4 +27,19 @@ function getQueryParams(qs) {
   }
   return params;
 }
+
+$(function () {
+  $('.providers button').on('click', function (event) {
+    var provider = $(event.target).attr('id');
+    window.location.href = endpoint + '/signin/' + provider;
+  });
+  var query = getQueryParams(document.location.search);
+  var token = query.token ? query.token : '';
+  $('#token').html(token);
+  localStorage.setItem('token', token);
+
+  testToken();
+
+  $('.testers #test').on('click', testToken);
+});
 
