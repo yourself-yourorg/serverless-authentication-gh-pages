@@ -17,6 +17,10 @@ function testToken() {
     });
 }
 
+function getPathFromUrl(url) {
+  return url.split(/[?#]/)[0];
+}
+
 function getQueryParams(qs) {
   qs = qs.split('+').join(' ');
   var params = {},
@@ -34,6 +38,12 @@ $(function () {
     var provider = $(event.target).attr('id');
     window.location.href = endpoint + '/signin/' + provider;
   });
+
+  $('#logout').on('click', function(event) {
+    localStorage.removeItem('token');
+    window.location.href = getPathFromUrl(window.location.href);
+  });
+
   var query = getQueryParams(document.location.search);
   var token = query.token ? query.token : '';
   $('#token').html(token);

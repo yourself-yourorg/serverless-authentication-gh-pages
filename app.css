@@ -20,7 +20,7 @@ h1 {
   word-wrap: break-word;
 }
 
-button {
+button, .button {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   padding: 5px;
   font-size: 12px;
