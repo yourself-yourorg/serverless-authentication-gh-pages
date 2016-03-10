@@ -36,6 +36,8 @@ function getQueryParams(qs) {
 $(function () {
   $('.providers button').on('click', function (event) {
     var provider = $(event.target).attr('id');
+    $('#token').html('Loading...');
+    $('#test-result').html('Loading...');
     window.location.href = endpoint + '/signin/' + provider;
   });
 
