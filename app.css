@@ -10,6 +10,10 @@ body {
 }
 
 h1 {
+  font-size: 24px;
+}
+
+h2 {
   font-size: 16px;
 }
 
@@ -30,4 +34,31 @@ button, .button {
   border: 1px solid #a9a9a9;
   background-color: #cacaca;
   margin: 2px;
+}
+
+.providers button {
+  background: transparent;
+  width: 64px;
+  height: 64px;
+  border: none;
+}
+
+.logout {
+  margin-top: 20px;
+}
+
+button#facebook {
+  background: url("images/icons/webicon-facebook.svg");
+}
+
+button#google {
+  background: url("images/icons/webicon-google.svg");
+}
+
+button#microsoft {
+  background: url("images/icons/webicon-windows.svg");
+}
+
+a {
+  color: #454545;
 }
