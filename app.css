@@ -26,21 +26,42 @@ h2 {
 
 button, .button {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  padding: 5px;
+  padding: 10px;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
-  border-radius: 5px;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #ededed;
   background-color: #cacaca;
   margin: 2px;
 }
 
+.providers {
+  display: -webkit-flex;
+  display: flex;
+}
+
 .providers button {
   background: transparent;
-  width: 64px;
-  height: 64px;
-  border: none;
+  height: 32px;
+  padding: 3px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.providers button div {
+  display: inline-block;
+  flex: auto;
+}
+
+.providers div.logo {
+  height: 26px;
+  width: 26px;
+}
+
+.providers div.text {
+ padding: 0 10px;
 }
 
 .logout {
@@ -48,15 +69,31 @@ button, .button {
 }
 
 button#facebook {
-  background: url("images/icons/webicon-facebook.svg");
+  background: #4c69ba;
+  background: linear-gradient(#4c69ba, #3b55a0);
+  color: white;
+  border: none;
 }
 
-button#google {
-  background: url("images/icons/webicon-google.svg");
+button#facebook div.logo {
+  background-image: url("images/icons/f.svg");
+  height: 26px;
+  width: 26px;
 }
 
-button#microsoft {
-  background: url("images/icons/webicon-windows.svg");
+button#google div.logo {
+  background: url("images/icons/g.svg");
+  height: 22px;
+  width: 22px;
+  margin-left: 2px;
+}
+
+button#microsoft div.logo {
+  background: url("images/icons/ms.png");
+  background-size: 22px 22px;
+  height: 22px;
+  width: 22px;
+  margin-left: 2px;
 }
 
 a {
