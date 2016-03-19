@@ -40,6 +40,10 @@ button, .button {
   display: flex;
 }
 
+button div.text, .button div.text {
+  white-space: nowrap;
+}
+
 .providers button {
   background: transparent;
   height: 32px;
