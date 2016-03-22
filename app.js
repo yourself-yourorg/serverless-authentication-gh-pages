@@ -4,10 +4,14 @@ var endpoint = 'https://ijgrniyi74.execute-api.eu-west-1.amazonaws.com/dev';
 
 function testToken() {
   $('#test-result').html('Loading...');
+
+  // set token to Authorization header
   $.ajax({
       method: 'GET',
       url: endpoint + '/test-token',
-      headers: {Authorization: localStorage.getItem('token')}
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
     })
     .done(function (data) {
       $('#test-result').html(JSON.stringify(data));
@@ -49,8 +53,11 @@ $(function () {
   var query = getQueryParams(document.location.search);
   var token = query.token ? query.token : '';
   $('#token').html(token);
+
+  // Save token to local storage for later use
   localStorage.setItem('token', token);
 
+  // trigger test token
   testToken();
 
   $('.testers #test').on('click', testToken);
