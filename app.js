@@ -42,7 +42,7 @@ $(function () {
     var provider = $(event.currentTarget).attr('id');
     $('#token').html('Loading...');
     $('#test-result').html('Loading...');
-    window.location.href = endpoint + '/signin/' + provider;
+    window.location.href = endpoint + '/authentication/signin/' + provider;
   });
 
   $('#logout').on('click', function(event) {
