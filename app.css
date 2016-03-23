@@ -9,6 +9,11 @@ body {
   max-width: 800px;
 }
 
+.notice {
+  color: red;
+  font-weight: bold;
+}
+
 h1 {
   font-size: 24px;
 }
