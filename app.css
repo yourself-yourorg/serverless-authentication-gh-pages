@@ -64,7 +64,6 @@ button div.text, .button div.text {
   padding: 3px;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
   margin-right: 10px;
   margin-bottom: 10px;
   -webkit-align-items: center;
