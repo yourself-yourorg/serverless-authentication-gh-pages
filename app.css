@@ -49,6 +49,9 @@ button, .button {
 .providers {
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 button div.text, .button div.text {
@@ -63,6 +66,7 @@ button div.text, .button div.text {
   display: flex;
   align-items: center;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .providers button div {
