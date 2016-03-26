@@ -52,14 +52,46 @@ $(function () {
 
   var query = getQueryParams(document.location.search);
   var token = query.token ? query.token : '';
-  $('#token').html(token);
-
-  // Save token to local storage for later use
-  localStorage.setItem('token', token);
-
+  // add token to local storage and view it
+  setToken(token);
   // trigger test token
   testToken();
 
   $('.testers #test').on('click', testToken);
 });
 
+function setToken(token) {
+  $('#token').html(token);
+  // Save token to local storage for later use
+  localStorage.setItem('token', token);
+}
+
+$(function(){
+  $('form').submit(function(event) {
+    var data = {
+      username: $('#username').val(),
+      password: $('#password').val(),
+      provider: 'custom-example'
+    };
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": endpoint + "/authentication/signin",
+      "method": "POST",
+      "data": JSON.stringify(data)
+    };
+
+    $.ajax(settings).done(function (rese) {
+      // add token to local storage and view it
+      setToken(response.token);
+      // trigger test token
+      testToken();
+    }).fail(function(error) {
+      setToken('');
+      alert('Invalid credentials. Try "username" and "password".')
+    });
+
+    event.preventDefault();
+  });
+});
