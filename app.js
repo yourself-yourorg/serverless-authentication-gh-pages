@@ -1,7 +1,6 @@
 'use strict';
 
-//var endpoint = 'https://xg5mkc5ci8.execute-api.us-west-2.amazonaws.com/prod';
-var endpoint = 'https://x2sf6musv1.execute-api.us-east-1.amazonaws.com/testinstall030/';
+var endpoint = 'https://xg5mkc5ci8.execute-api.us-west-2.amazonaws.com/prod';
 
 function testToken() {
   $('#test-result').html('Loading...');
