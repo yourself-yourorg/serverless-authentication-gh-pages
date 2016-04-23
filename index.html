@@ -12,6 +12,7 @@
 <body>
 <div class="main">
   <h1>Serverless Authentication</h1>
+  <h1 class="notice">UPDATING BACKEND</h1>
   <p>This is a frontend demonstration how <a href="https://www.npmjs.com/package/serverless-authentication-boilerplate" target="_blank">Serverless Authentication boilerplate</a> works.</p>
   <p>Same version of boilerplate is used in this demo, it only authenticates, no personal data is saved to db.</p>
   <h2>Providers</h2>
@@ -24,12 +25,14 @@
   <div class="logout">
     <button id="logout">Logout</button>
   </div>
-  <h2>Token</h2>
+  <h2>Response</h2>
   <div id="token" class="response"></div>
   <h2>Test</h2>
-  <p>Token is valid for a minute</p>
+  <p>Authorization token is valid for a 15 seconds, if auto refresh is checked, refresh token is used to request new authorization token</p>
   <div class="testers">
     <button id="test">Test token</button>
+    <button id="refresh">Refresh token</button>
+    <input type="checkbox" id="auto-refresh" checked="checked">Auto refresh token
   </div>
   <div id="test-result" class="response"></div>
   <p>See also <a href="http://www.serverless.com">serverless.com</a></p>
