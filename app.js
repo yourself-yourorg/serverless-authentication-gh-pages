@@ -104,7 +104,7 @@ $(function () {
     var aToken = query.authorization_token || '';
     var rToken = query.refresh_token || '';
     saveResponse(aToken, rToken);
-    window.history.replaceState({authorization_token: ''}, '', '/serverless-authentication-gh-pages');
+    window.history.replaceState({authorization_token: ''}, 'serverless-authentication-gh-pages', '/serverless-authentication-gh-pages');
 
     // trigger test token
     testToken();
