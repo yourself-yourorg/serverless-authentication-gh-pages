@@ -1,7 +1,7 @@
 'use strict';
 
-var endpoint = 'https://xg5mkc5ci8.execute-api.us-west-2.amazonaws.com/prod';
-
+var authenticationEndpoint = 'https://p8g2igg4hb.execute-api.us-east-1.amazonaws.com/dev';
+var contentApiEndpoint = 'https://ssq98w9pr2.execute-api.us-east-1.amazonaws.com/dev';
 function testToken() {
   var authorizationToken = localStorage.getItem('authorization_token');
   if (authorizationToken) {
@@ -10,7 +10,7 @@ function testToken() {
     // set token to Authorization header
     $.ajax({
         method: 'GET',
-        url: endpoint + '/test-token',
+        url: contentApiEndpoint + '/test-token',
         headers: {
           Authorization: authorizationToken
         }
@@ -37,7 +37,7 @@ function refreshToken() {
   // refresh token
   $.ajax({
       method: 'GET',
-      url: endpoint + '/authentication/refresh/' + localStorage.getItem('refresh_token')
+      url: authenticationEndpoint + '/authentication/refresh/' + localStorage.getItem('refresh_token')
     })
     .done(function (data) {
       if (data.errorMessage) {
@@ -86,7 +86,7 @@ $(function () {
     var provider = $(event.currentTarget).attr('id');
     $('#token').html('Loading...');
     $('#test-result').html('Loading...');
-    window.location.href = endpoint + '/authentication/signin/' + provider;
+    window.location.href = authenticationEndpoint + '/authentication/signin/' + provider;
   });
 
   $('#logout').on('click', function(event) {
