@@ -1,7 +1,7 @@
 'use strict';
 
-var authenticationEndpoint = 'https://p8g2igg4hb.execute-api.us-east-1.amazonaws.com/dev';
-var contentApiEndpoint = 'https://ssq98w9pr2.execute-api.us-east-1.amazonaws.com/dev';
+var authenticationEndpoint = 'https://9dy4dujyvi.execute-api.us-west-2.amazonaws.com/dev';
+var contentApiEndpoint = 'https://ahjp96rjgc.execute-api.us-west-2.amazonaws.com/dev';
 function testToken() {
   var authorizationToken = localStorage.getItem('authorization_token');
   if (authorizationToken) {
