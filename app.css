@@ -15,7 +15,6 @@ body {
 }
 
 .notice {
-  display: none;
   color: red;
   font-weight: bold;
 }
